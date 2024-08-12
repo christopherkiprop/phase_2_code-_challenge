@@ -19,6 +19,15 @@ function TransactionsList() {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
+        {/* Map through the transactions array and render a Transaction component for each item */}
+        {transactions.map((transaction) => (
+          <Transaction
+            key={transaction.id} // Unique key for each transaction, required by React
+            date={transaction.date} // Pass the transaction date as a prop
+            description={transaction.description} // Pass the transaction description as a prop
+            category={transaction.category} // Pass the transaction category as a prop
+            amount={transaction.amount} // Pass the transaction amount as a prop
+          />
         {/* render a list of <Transaction> components here */}
       </tbody>
     </table>
